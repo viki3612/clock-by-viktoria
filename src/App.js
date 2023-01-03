@@ -25,8 +25,9 @@ export default function App() {
             rel="noreferrer"
           >
             {" "}
-            Github ✌️
+            Github
           </a>
+          ✌️
         </footer>
       </div>
     </div>
