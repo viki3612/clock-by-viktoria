@@ -13,20 +13,22 @@ export default function Clock(props) {
   }
   return (
     <div className="Clock">
-      <h1 className="Clock-title"> World Clock </h1>
-      <form onSubmit={handleSubmit}>
-        <div className="input-group">
-          <input
-            type="search"
-            className="form-control"
-            onChange={handleCityChange}
-            placeholder="Search for a city"
-          />
-          <button class="btn btn-outline-secondary" type="submit">
-            Search
-          </button>
-        </div>
-      </form>
+      <section>
+        <h1 className="Clock-title"> World Clock </h1>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <input
+              type="search"
+              className="form-control"
+              onChange={handleCityChange}
+              placeholder="Search for a city"
+            />
+            <button class="btn btn-outline-secondary" type="submit">
+              Search
+            </button>
+          </div>
+        </form>
+      </section>
     </div>
   );
 }

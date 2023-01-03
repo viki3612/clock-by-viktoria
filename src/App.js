@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+//import img from "./img.svg";
 import "./App.css";
 import Clock from "./Clock";
 
