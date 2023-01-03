@@ -1,13 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Clock from "./Clock";
+import Dictionary from "./Dictionary";
+import logo from "./books-img.png";
 
 export default function App() {
   return (
     <div className="App">
       <div className="container">
         <main>
-          <Clock defaultCity="London" />
+          <div className="App-header">
+            <img src={logo} className="img-fluid" alt="logo" />
+          </div>
+          <Dictionary defaultWord="sunset" />
         </main>
         <footer className="App-footer m-4">
           Project is coded by{" "}
