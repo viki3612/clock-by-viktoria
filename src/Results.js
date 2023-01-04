@@ -11,18 +11,17 @@ export default function Results(props) {
             <div className="col-6"> Location </div>
             <div className="col-6"> Time </div>
           </div>
-          <div className="row">
-            <div className="col-6">
-              <h2 className="city-output">{props.results.data.city}</h2>
-            </div>
+
+          <h2 className="city-output">{props.results.data.city}</h2>
+          <div className="time">
+            {props.results.time.map(function (time, index) {
+              return (
+                <div key={index}>
+                  <Time time={time} />
+                </div>
+              );
+            })}
           </div>
-          {props.results.time.map(function (time, index) {
-            return (
-              <div key={index}>
-                <Time time={time} />
-              </div>
-            );
-          })}
         </section>
       </div>
     );
