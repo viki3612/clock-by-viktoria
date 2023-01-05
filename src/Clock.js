@@ -10,11 +10,6 @@ export default function Clock(props) {
   let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    search();
-  }
-
   function search() {
     let apiKey = "aegZsziJuzKzClDmemJB";
     let apiUrl = `https://timezoneapi.io/api/ip/?token=${apiKey}`;
@@ -26,8 +21,9 @@ export default function Clock(props) {
     axios.get(pexelsApiUrl, { headers }).then(handlePexelResponse);
     console.log(apiUrl);
   }
-  function handleCityChange(event) {
-    setCity(event.target.value);
+  function handleSelect(event) {
+    console.log(event);
+    //setCity(event.target.value);
   }
   function handleResponse(response) {
     setResult(response.data);
@@ -46,20 +42,25 @@ export default function Clock(props) {
           <h1 className="Clock-title">
             <i className="fa-solid fa-earth-americas"></i> World Clock{" "}
           </h1>
-
-          <form onSubmit={handleSubmit}>
-            <div className="input-group">
-              <input
-                type="search"
-                className="form-control"
-                onChange={handleCityChange}
-                placeholder="Search for a city"
-              />
-              <button className="btn btn-outline-secondary" type="submit">
-                Search
-              </button>
+          {/*  1. Link the dropdown options with API to replace the 1st line when selected 2. Add another 3 cities and link with their real time*/}
+          <div className="dropdown">
+            <button
+              className="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              onSelect={handleSelect}
+            >
+              Select a city
+            </button>
+            <div className="dropdown-menu">
+              <a className="dropdown-item">Milan</a>
+              <a className="dropdown-item">Another action</a>
+              <a className="dropdown-item">Something else here</a>
             </div>
-          </form>
+          </div>
 
           {/*component name (Results) property name (results) = {property value set in the state}*/}
           <Results results={result} />
