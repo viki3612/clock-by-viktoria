@@ -8,20 +8,20 @@ export default function Results(props) {
       <div className="Result">
         <section>
           <div className="row">
-            <div className="col-6"> Location </div>
-            <div className="col-6"> Time </div>
+            <div className="col-6">
+              {" "}
+              <h2 className="city-output">
+                {props.results.data.timezone.id}
+              </h2>{" "}
+            </div>
           </div>
-
-          <h2 className="city-output">{props.results.data.city}</h2>
-          <div className="time">
-            {props.results.time.map(function (time, index) {
-              return (
-                <div key={index}>
-                  <Time time={time} />
-                </div>
-              );
-            })}
-          </div>
+          {props.results.time.map(function (time, index) {
+            return (
+              <div key={index}>
+                <Time time={time} />
+              </div>
+            );
+          })}
         </section>
       </div>
     );

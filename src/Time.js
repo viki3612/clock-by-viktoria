@@ -1,16 +1,24 @@
 import React from "react";
+
 export default function Time(props) {
   return (
     <div className="Time">
-      <section>
-        <h3>
-          {props.time.data.datetime.time} {props.time.data.datetime.hour_am_pm}
-        </h3>
-        <h2 className="timezone-output">
-          {props.time.data.datetime.offset_tzid}
-        </h2>
-        <h3>{props.time.data.datetime.offset_tzfull}</h3>
-      </section>
+      <div className="row">
+        <div className="col-6">
+          {" "}
+          <h2 className="time">{props.time.data.datetime.time}</h2>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-6">
+          {" "}
+          <p className="date">{props.time.data.datetime.date}</p>{" "}
+        </div>
+        <div className="col-6">
+          {" "}
+          <p className="timezone"> {props.time.datetime.offset_tzfull} </p>{" "}
+        </div>
+      </div>
     </div>
   );
 }

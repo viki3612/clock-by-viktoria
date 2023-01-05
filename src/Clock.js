@@ -15,13 +15,14 @@ export default function Clock(props) {
   }
   function search() {
     let apiKey = "aegZsziJuzKzClDmemJB";
-    let apiUrl = `https://timezoneapi.io/api/ip/?token=${apiKey}`;
+    let apiUrl = `https://timezoneapi.io/api/ip/?&token=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
     let pexelsApiKey =
       "563492ad6f9170000100000145a90d0d1df34715bf82ec969d716060";
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${city}&per_page=6`;
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
     axios.get(pexelsApiUrl, { headers }).then(handlePexelResponse);
+    console.log(apiUrl);
   }
   function handleCityChange(event) {
     setCity(event.target.value);
