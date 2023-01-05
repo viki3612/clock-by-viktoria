@@ -1,28 +1,23 @@
 import React from "react";
-import Time from "./Time";
 import "./Results.css";
 
 export default function Results(props) {
   if (props.results) {
     return (
       <div className="Result">
-        <section>
-          <div className="row">
-            <div className="col-6">
-              {" "}
-              <h2 className="city-output">
-                {props.results.data.timezone.id}
-              </h2>{" "}
-            </div>
+        <div className="row">
+          <div className="col-6">
+            <h2 className="city-output">{props.results.data.timezone.id}</h2>{" "}
           </div>
-          {props.results.time.map(function (time, index) {
-            return (
-              <div key={index}>
-                <Time time={time} />
-              </div>
-            );
-          })}
-        </section>
+          <div className="col-6">
+            <h2 className="city-output">{props.results.data.datetime.time}</h2>{" "}
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-6">
+            <h2 className="city-output">{props.results.data.timezone.id}</h2>{" "}
+          </div>
+        </div>
       </div>
     );
   } else {

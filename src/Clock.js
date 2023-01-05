@@ -9,13 +9,15 @@ export default function Clock(props) {
   let [result, setResult] = useState(null);
   let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
   }
+
   function search() {
     let apiKey = "aegZsziJuzKzClDmemJB";
-    let apiUrl = `https://timezoneapi.io/api/ip/?&token=${apiKey}`;
+    let apiUrl = `https://timezoneapi.io/api/ip/?token=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
     let pexelsApiKey =
       "563492ad6f9170000100000145a90d0d1df34715bf82ec969d716060";
@@ -44,6 +46,7 @@ export default function Clock(props) {
           <h1 className="Clock-title">
             <i className="fa-solid fa-earth-americas"></i> World Clock{" "}
           </h1>
+
           <form onSubmit={handleSubmit}>
             <div className="input-group">
               <input
