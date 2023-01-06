@@ -12,22 +12,35 @@ export default function Clock(props) {
 
   function search() {
     let apiKey = "aegZsziJuzKzClDmemJB";
-    let apiUrl = `https://timezoneapi.io/api/ip/?token=${apiKey}`;
+    let apiUrl = `https://timezoneapi.io/api/ip/?&token=${apiKey}`;
+    //console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);
     let pexelsApiKey =
       "563492ad6f9170000100000145a90d0d1df34715bf82ec969d716060";
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${city}&per_page=6`;
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
     axios.get(pexelsApiUrl, { headers }).then(handlePexelResponse);
-    console.log(apiUrl);
   }
-  function handleSelect(event) {
-    console.log(event);
-    //setCity(event.target.value);
+  function timezone() {
+    var cityTimezones = require("city-timezones");
+    const cityLookup = cityTimezones.lookupViaCity(`${city}`);
+    const timezone = cityLookup[0].timezone;
+    let apiKey = "aegZsziJuzKzClDmemJB";
+    let apiUrl = `https://timezoneapi.io/api/timezone/?timezone=${timezone}&token=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+    timezone();
+  }
+  function handlecityChange(event) {
+    setCity(event.target.value);
   }
   function handleResponse(response) {
     setResult(response.data);
   }
+
   function handlePexelResponse(response) {
     setPhotos(response.data.photos);
   }
@@ -42,26 +55,21 @@ export default function Clock(props) {
           <h1 className="Clock-title">
             <i className="fa-solid fa-earth-americas"></i> World Clock{" "}
           </h1>
-          {/*  1. Link the dropdown options with API to replace the 1st line when selected 2. Add another 3 cities and link with their real time*/}
-          <div className="dropdown">
-            <button
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-bs-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              onSelect={handleSelect}
-            >
-              Select a city
-            </button>
-            <div className="dropdown-menu">
-              <a className="dropdown-item">Milan</a>
-              <a className="dropdown-item">Another action</a>
-              <a className="dropdown-item">Something else here</a>
-            </div>
-          </div>
 
+          <form onSubmit={handleSubmit}>
+            <div className="input-group">
+              <input
+                type="search"
+                className="form-control"
+                list="datalistOptions"
+                onChange={handlecityChange}
+                placeholder="Search for a city"
+              />
+              <button className="btn btn-primary" type="submit">
+                Search
+              </button>
+            </div>
+          </form>
           {/*component name (Results) property name (results) = {property value set in the state}*/}
           <Results results={result} />
           <Photos photos={photos} />

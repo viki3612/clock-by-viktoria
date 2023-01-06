@@ -7,7 +7,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <main>
-          <Clock defaultCity="London" />
+          <Clock defaultCity="Europe/London" />
         </main>
         <footer className="App-footer m-4">
           Project is coded by{" "}
