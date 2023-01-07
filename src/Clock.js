@@ -16,7 +16,7 @@ export default function Clock(props) {
     //console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);
     let pexelsApiKey =
-      "563492ad6f9170000100000145a90d0d1df34715bf82ec969d716060";
+      "563492ad6f91700001000001ca29f16adf9545ae98988280416b1057";
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${city}&per_page=6`;
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
     axios.get(pexelsApiUrl, { headers }).then(handlePexelResponse);
@@ -29,9 +29,10 @@ export default function Clock(props) {
     const cityLookup = cityTimezones.lookupViaCity(`${city}`);
     const timezone = cityLookup[0].timezone;
     let apiKey = "aegZsziJuzKzClDmemJB";
-    let apiUrl = `https://timezoneapi.io/api/timezone/?timezone=${timezone}&token=${apiKey}`;
-    axios.get(apiUrl).then(handleResponse);
+    let apiTimezoneUrl = `https://timezoneapi.io/api/timezone/?timezone=${timezone}&token=${apiKey}`;
+    axios.get(apiTimezoneUrl).then(handleResponse);
   }
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -66,7 +67,7 @@ export default function Clock(props) {
                 className="form-control"
                 list="datalistOptions"
                 onChange={handlecityChange}
-                placeholder="Search for a city"
+                placeholder="Type a city"
               />
               <button className="btn btn-primary" type="submit">
                 Search
