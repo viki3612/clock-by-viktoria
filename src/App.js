@@ -9,7 +9,7 @@ export default function App() {
         <main>
           <Clock defaultCity="Europe/London" />
         </main>
-        <p className="App-footer m-4">
+        <footer className="App-footer m-4">
           Project is coded by{" "}
           <a
             href="https://viktoria-nikolova-portfolio.netlify.app"
@@ -28,7 +28,7 @@ export default function App() {
             Github
           </a>
           ✌️
-        </p>
+        </footer>
       </div>
     </div>
   );
