@@ -20,7 +20,7 @@ export default function Results(props) {
             <span className="timezone-output">
               {props.results.data.datetime.offset_tzfull}
             </span>{" "}
-            - GMT {""}
+            GMT {""}
             <span className="timezone-output">
               ({props.results.data.datetime.offset_gmt})
             </span>{" "}
