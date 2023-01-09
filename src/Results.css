@@ -1,15 +1,26 @@
 .Result {
   padding: 20px 0px;
-  margin: 48px 0px;
-  background-color: white;
+  margin: 25px 0px;
   border-radius: 6px;
-  color: black;
+  color: white;
 }
 .Result .time-output {
-  font-size: 48px;
+  font-size: 50px;
   font-weight: 700;
 }
-.Result .additional-info {
-  margin: 20px 30px;
+.Result .gmt {
   font-size: 20px;
+}
+.Result .additional-info {
+  margin: 30px;
+  font-size: 20px;
+}
+.Result .location-box,
+.date-box,
+.timezone-box {
+  background-color: white;
+  margin: 0px 15px;
+  padding: 15px 0px 15px 0px;
+  color: black;
+  border-radius: 6px;
 }
