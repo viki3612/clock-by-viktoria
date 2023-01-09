@@ -22,9 +22,8 @@ export default function Clock(props) {
     axios.get(pexelsApiUrl, { headers }).then(handlePexelResponse);
   }
   function timezone() {
-    {
-      /*https://github.com/kevinroberts/city-timezones*/
-    }
+    /*https://github.com/kevinroberts/city-timezones*/
+
     var cityTimezones = require("city-timezones");
     const cityLookup = cityTimezones.lookupViaCity(`${city}`);
     const timezone = cityLookup[0].timezone;

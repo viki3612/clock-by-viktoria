@@ -2,11 +2,13 @@
   text-align: center;
   margin: 40px 15px;
 }
-h1 {
+h1,
+h2,
+h3 {
   font-family: "Poppins", sans-serif;
 }
-h2,
-p,
+
+div,
 footer {
   font-family: "Lato", sans-serif;
 }
@@ -16,11 +18,4 @@ footer a {
 }
 footer a:hover {
   color: #396eb0;
-}
-h2 {
-  font-size: 30px;
-}
-p,
-span {
-  font-size: 18px;
 }
