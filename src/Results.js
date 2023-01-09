@@ -8,16 +8,14 @@ export default function Results(props) {
   if (props.results) {
     return (
       <div className="Result">
-        <div className="time-info">
-          <h2 className="main-output">
-            {props.results.data.datetime.hour_24_wilz}:
-            {props.results.data.datetime.minutes}{" "}
-            {props.results.data.datetime.hour_am_pm}
-          </h2>{" "}
-        </div>
+        <h2 className="time-info">
+          {props.results.data.datetime.hour_24_wilz}:
+          {props.results.data.datetime.minutes}{" "}
+          {props.results.data.datetime.hour_am_pm}{" "}
+        </h2>
         <hr></hr>
-        <div className="row additional-info">
-          <div className="col location-box">
+        <div className="row">
+          <div className="col ">
             <img src={location} className="img-fluid" alt="icon" width="100" />
             <div className="location-output mb-3">
               {props.results.data.timezone.id}
@@ -26,7 +24,7 @@ export default function Results(props) {
               {props.results.data.timezone.country_name}
             </div>
           </div>
-          <div className="col date-box">
+          <div className="col">
             <img src={date} className="img-fluid" alt="icon" width="100" />
             <div className="date-output mb-3">
               {props.results.data.datetime.day_abbr}
@@ -37,7 +35,7 @@ export default function Results(props) {
               {props.results.data.datetime.year}{" "}
             </div>
           </div>
-          <div className="col timezone-box">
+          <div className="col">
             <img src={clock} className="img-fluid" alt="icon" width="100" />
             <div className="timezone-output mb-3">
               {props.results.data.datetime.offset_tzfull}
