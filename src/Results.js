@@ -15,10 +15,10 @@ export default function Results(props) {
             {props.results.data.datetime.hour_am_pm}
           </h2>{" "}
         </div>
-
+        <hr></hr>
         <div className="row additional-info">
           <div className="col location-box">
-            <img src={location} className="img-fluid" alt="icon" width="150" />
+            <img src={location} className="img-fluid" alt="icon" width="100" />
             <div className="location-output mb-3">
               {props.results.data.timezone.id}
             </div>
@@ -27,7 +27,7 @@ export default function Results(props) {
             </div>
           </div>
           <div className="col date-box">
-            <img src={date} className="img-fluid" alt="icon" width="150" />
+            <img src={date} className="img-fluid" alt="icon" width="100" />
             <div className="date-output mb-3">
               {props.results.data.datetime.day_abbr}
             </div>
@@ -38,7 +38,7 @@ export default function Results(props) {
             </div>
           </div>
           <div className="col timezone-box">
-            <img src={clock} className="img-fluid" alt="icon" width="150" />
+            <img src={clock} className="img-fluid" alt="icon" width="100" />
             <div className="timezone-output mb-3">
               {props.results.data.datetime.offset_tzfull}
             </div>
