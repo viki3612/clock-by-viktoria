@@ -17,3 +17,12 @@ hr {
   margin: 80px 0px;
   border-top: 1px solid #ced4da;
 }
+@media (max-width: 576px) {
+  .Result {
+    font-size: 16px;
+  }
+  .Result .time-info,
+  .Clock .Clock-title {
+    font-size: 38px;
+  }
+}

@@ -14,7 +14,7 @@ export default function Results(props) {
           {props.results.data.datetime.hour_am_pm}{" "}
         </h2>
         <hr></hr>
-        <div className="row">
+        <div className="row other-information">
           <div className="col ">
             <img src={location} className="img-fluid" alt="icon" width="100" />
             <div className="location-output mb-3">
