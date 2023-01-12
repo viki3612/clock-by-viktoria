@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Clock.css";
 import axios from "axios";
 import Results from "./Results";
