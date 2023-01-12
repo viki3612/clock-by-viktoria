@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Clock.css";
 import axios from "axios";
 import Results from "./Results";
@@ -13,28 +13,25 @@ export default function Clock(props) {
   function search() {
     let apiKey = "aegZsziJuzKzClDmemJB";
     let apiUrl = `https://timezoneapi.io/api/ip/?&token=${apiKey}`;
-    //console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);
-    let pexelsApiKey =
-      "563492ad6f91700001000001ca29f16adf9545ae98988280416b1057";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${city}&per_page=6`;
-    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
-    axios.get(pexelsApiUrl, { headers }).then(handlePexelResponse);
   }
   function timezone() {
     /*https://github.com/kevinroberts/city-timezones*/
-
     var cityTimezones = require("city-timezones");
     const cityLookup = cityTimezones.lookupViaCity(`${city}`);
     const timezone = cityLookup[0].timezone;
     let apiKey = "aegZsziJuzKzClDmemJB";
     let apiTimezoneUrl = `https://timezoneapi.io/api/timezone/?timezone=${timezone}&token=${apiKey}`;
     axios.get(apiTimezoneUrl).then(handleResponse);
+    let pexelsApiKey =
+      "563492ad6f9170000100000145a90d0d1df34715bf82ec969d716060";
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${city}&per_page=6`;
+    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+    axios.get(pexelsApiUrl, { headers }).then(handlePexelResponse);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    search();
     timezone();
   }
   function handlecityChange(event) {
