@@ -43,7 +43,7 @@ export default function Clock(props) {
   }
   function handleResponse(response) {
     setResult(response.data);
-    console.log(response.data);
+    //console.log(response.data);
   }
 
   function handlePexelResponse(response) {
