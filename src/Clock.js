@@ -34,7 +34,6 @@ export default function Clock(props) {
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
     axios.get(pexelsApiUrl, { headers }).then(handlePexelResponse);
   }
-
   function handleSubmit(event) {
     event.preventDefault();
     timezone();
@@ -44,6 +43,7 @@ export default function Clock(props) {
   }
   function handleResponse(response) {
     setResult(response.data);
+    console.log(response.data);
   }
 
   function handlePexelResponse(response) {
