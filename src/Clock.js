@@ -11,8 +11,8 @@ export default function Clock(props) {
   let [photos, setPhotos] = useState(null);
 
   function search() {
-    let apiKey = "aegZsziJuzKzClDmemJB";
-    let apiUrl = `https://timezoneapi.io/api/ip/?&token=${apiKey}`;
+    let apiKey = "cfd59bc6b0a94ac4a08457e62089daf5";
+    let apiUrl = `https://api.ipgeolocation.io/timezone?apiKey=${apiKey}&tz=${city}`;
     axios.get(apiUrl).then(handleResponse);
     let pexelsApiKey =
       "563492ad6f9170000100000145a90d0d1df34715bf82ec969d716060";
@@ -25,8 +25,8 @@ export default function Clock(props) {
     var cityTimezones = require("city-timezones");
     const cityLookup = cityTimezones.lookupViaCity(`${city}`);
     const timezone = cityLookup[0].timezone;
-    let apiKey = "aegZsziJuzKzClDmemJB";
-    let apiTimezoneUrl = `https://timezoneapi.io/api/timezone/?timezone=${timezone}&token=${apiKey}`;
+    let apiKey = "cfd59bc6b0a94ac4a08457e62089daf5";
+    let apiTimezoneUrl = `https://api.ipgeolocation.io/timezone?apiKey=${apiKey}&tz=${timezone}`;
     axios.get(apiTimezoneUrl).then(handleResponse);
     let pexelsApiKey =
       "563492ad6f9170000100000145a90d0d1df34715bf82ec969d716060";

@@ -7,6 +7,7 @@
 .Result .time-info {
   padding: 30px;
   border: 1px solid #ced4da;
+
   box-shadow: 4px 4px 10px #4c4c6d;
   border-radius: 36px;
   font-size: 50px;
@@ -14,7 +15,7 @@
 }
 
 hr {
-  margin: 80px 0px;
+  margin: 60px 0px;
   border-top: 1px solid #ced4da;
 }
 @media (max-width: 576px) {
@@ -24,5 +25,8 @@ hr {
   .Result .time-info,
   .Clock .Clock-title {
     font-size: 38px;
+  }
+  .img-fluid-location {
+    max-width: 66px;
   }
 }
