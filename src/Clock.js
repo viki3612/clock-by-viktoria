@@ -31,7 +31,7 @@ export default function Clock(props) {
     let pexelsApiKey =
       "563492ad6f9170000100000145a90d0d1df34715bf82ec969d716060";
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${city}&per_page=6`;
-    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+    let headers = { Authorization: `${pexelsApiKey}` };
     axios.get(pexelsApiUrl, { headers }).then(handlePexelResponse);
   }
   function handleSubmit(event) {
